@@ -12,7 +12,7 @@ function SongList(props) {
              <AddArtistInput onSubmit={props.addItemHandler} />
              <AddGenreInput onSubmit={props.addItemHandler} />
              <AddRatingInput onSubmit={props.addItemHandler} />
-             <button onClick={() => this.props.onClickHandler(this.state.inputValue)}>Submit</button>
+             <button onClick={() => this.props.onClickHandler(this.props.inputValue)}>Submit</button>
              <List listItems={props.songItems} />
         </div>
     )

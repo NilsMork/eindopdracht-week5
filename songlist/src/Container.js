@@ -11,14 +11,14 @@ class Container extends React.Component {
 
     }
 
-    addSongItem = (title) => {
-        console.log(title);
+    addSongItem = (value) => {
+        console.log(value);
         const itemObject = {
-            id: this.state.songItems.length + 1,
-            title: title
+            id: this.state.songItems.length,
+            title: value
         }
         this.setState({
-            groveryItems: [...this.state.songItems, itemObject]
+            songItems: [...this.state.songItems, itemObject]
         })
     }
 
