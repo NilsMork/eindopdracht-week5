@@ -1,9 +1,9 @@
 import React from "react"
-import Form from "./components/FormContainer"
+import SongList from "./components/SongList"
 
 function App() {
     return (
-        <Form />
+        <SongList />
     )
 }
 

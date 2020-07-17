@@ -1,19 +1,22 @@
 import React from "react"
 
 class FormComponent extends React.Component {
-    state = {
-      input: ""
+    constructor() {
+        super()
+
+        state = {
+            input: ""
     };
   
     render() {
       const onInput = event => {
         this.setState({
-          input: event.target.song + event.target.artist + + event.target.genre + event.target.rating
+          input: event.target.value
         });
       };
-  
-      const onSubmit = e => {
-        e.preventDefault();
+    
+      const onSubmit = add => {
+        add.preventDefault();
         this.props.onSubmit(this.state.input);
         this.setState({
           input: ""
@@ -21,8 +24,8 @@ class FormComponent extends React.Component {
       };
 
     return (
-        <main>
-            <form className="Songs-input" onSubmit={onSubmit}>
+        
+            <form onSubmit={onSubmit}>
                 <input 
                     name="Song" 
                     value={this.state.song} 
@@ -66,20 +69,18 @@ class FormComponent extends React.Component {
                 </select>
                 
                 <br />
-                
     
-                
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
-            {/* <p>Song: {props.data.Song}</p>
+            /* <p>Song: {props.data.Song}</p>
             <p>Artist: {props.data.Artist}</p>
             <p>Genre: {props.data.Genre}</p>
-            <p>Your rating: {props.data.Rating}</p> */}
+            <p>Your rating: {props.data.Rating}</p> */
         
             
-        </main>
-    )
+    )}
+ }
   }
-}
+
 
 export default FormComponent
