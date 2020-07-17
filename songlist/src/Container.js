@@ -11,6 +11,11 @@ class Container extends React.Component {
 
     }
 
+    // array songs = []
+    // array artists = []
+    // etc
+    // array allItems = array Songs + array artists
+
     addSongItem = (value) => {
         console.log(value);
         const itemObject = {
@@ -21,6 +26,17 @@ class Container extends React.Component {
             songItems: [...this.state.songItems, itemObject]
         })
     }
+
+    // addArtistItem = (value) => {
+    //     console.log(value);
+    //     const itemObject = {
+    //         id: this.state.artistItems.length,
+    //         title: value
+    //     }
+    //     this.setState({
+    //         artistItems: [...this.state.artistItems, itemObject]
+    //     })
+    // }
 
     render() {
         return (
