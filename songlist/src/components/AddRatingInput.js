@@ -18,12 +18,12 @@ handleChange = (event) => {
 render() {
     return(
         <div>
-            <select value={this.state.inputValue} onChange={this.handleChange} >
-                <option value=""></option>
-                <option value="Rock">Rock</option>
-                <option value="Blues">Blues</option>
-                <option value="Pop">Pop</option>
-                <option value="Jazz">Jazz</option>
+            <select value={this.state.inputValue} onChange={this.handleChange}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
             </select>
         </div>
     )

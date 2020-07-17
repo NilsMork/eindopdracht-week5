@@ -1,9 +1,9 @@
 import React from "react"
-import SongList from "./components/SongList"
+import Container from "./Container"
 
 function App() {
     return (
-        <SongList />
+        <Container />
     )
 }
 
