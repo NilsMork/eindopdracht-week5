@@ -1,29 +1,48 @@
 import React from "react"
 
-function FormComponent(props) {
+class FormComponent extends React.Component {
+    state = {
+      input: ""
+    };
+  
+    render() {
+      const onInput = event => {
+        this.setState({
+          input: event.target.song + event.target.artist + + event.target.genre + event.target.rating
+        });
+      };
+  
+      const onSubmit = e => {
+        e.preventDefault();
+        this.props.onSubmit(this.state.input);
+        this.setState({
+          input: ""
+        });
+      };
+
     return (
         <main>
-            <form>
+            <form className="Songs-input" onSubmit={onSubmit}>
                 <input 
                     name="Song" 
-                    value={props.data.Song} 
-                    onChange={props.handleSongChange} 
+                    value={this.state.song} 
+                    onChange={onInput} 
                     placeholder="Song" 
                 />
                 <br />
                 
                 <input 
                     name="Artist" 
-                    value={props.data.Artist}
-                    onChange={props.handleArtistChange} 
+                    value={this.state.artist}
+                    onChange={onInput} 
                     placeholder="Artist" 
                 />
                 <br />
                 
                 <select 
-                    value={props.data.Genre} 
+                    value={this.state.genre} 
                     name="Genre" 
-                    onChange={props.handleGenreChange}
+                    onChange={onInput}
                 >
                     <option value=""></option>
                     <option value="rock">Rock</option>
@@ -35,9 +54,9 @@ function FormComponent(props) {
                 <br />
 
                 <select 
-                    value={props.data.Rating} 
+                    value={this.state.rating} 
                     name="Rating" 
-                    onChange={props.handleRatingChange}
+                    onChange={onInput}
                 >
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -52,14 +71,15 @@ function FormComponent(props) {
                 
                 <button>Submit</button>
             </form>
-            <p>Song: {props.data.Song}</p>
+            {/* <p>Song: {props.data.Song}</p>
             <p>Artist: {props.data.Artist}</p>
             <p>Genre: {props.data.Genre}</p>
-            <p>Your rating: {props.data.Rating}</p>
+            <p>Your rating: {props.data.Rating}</p> */}
         
             
         </main>
     )
+  }
 }
 
 export default FormComponent
